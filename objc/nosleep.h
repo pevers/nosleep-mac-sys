@@ -3,7 +3,7 @@
 
 CFStringRef assertionName = CFSTR("Power Save Blocker");
 
-int start(NSString* noSleepType, UInt32* handle);
+int start(NSString *noSleepType, UInt32 *handle);
 
 void stop(UInt32 handle);
 
