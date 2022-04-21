@@ -1,5 +1,6 @@
 [package]
 name = "nosleep-mac-sys"
+description = "Block power save mode for macOS"
 version = "0.1.0"
 edition = "2018"
 rust-version = "1.56"
