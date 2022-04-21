@@ -20,11 +20,11 @@ use std::ops::Deref;
 
 mod sys {
     use objc_foundation::NSString;
-    use std::ffi::{c_int, c_uint};
+    use std::ffi::{c_uint};
 
     #[link(name = "nosleep")]
     extern "C" {
-        pub fn start(noSleepType: *const NSString, handle: *mut c_uint) -> c_int;
+        pub fn start(noSleepType: *const NSString, handle: *mut c_uint) -> std::os::raw::c_int;
         pub fn stop(handle: c_uint);
         pub fn isStarted(handle: c_uint) -> bool;
     }
