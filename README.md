@@ -11,7 +11,7 @@ macOS library to block the power save function and preventing the OS to sleep.
 ## Usage
 
 ```toml
-#Cargo.toml
+# Cargo.toml
 [dependencies]
 nosleep-mac-sys = "0.1.0"
 ```

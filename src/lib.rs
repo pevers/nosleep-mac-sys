@@ -11,7 +11,6 @@
 //! ```
  
 #![cfg(target_os = "macos")]
-#![feature(core_ffi_c)]
 #![allow(improper_ctypes)]
 
 use objc_foundation::{INSString, NSString};
@@ -20,13 +19,12 @@ use std::ops::Deref;
 
 mod sys {
     use objc_foundation::NSString;
-    use std::ffi::{c_uint};
 
     #[link(name = "nosleep")]
     extern "C" {
-        pub fn start(noSleepType: *const NSString, handle: *mut c_uint) -> std::os::raw::c_int;
-        pub fn stop(handle: c_uint);
-        pub fn isStarted(handle: c_uint) -> bool;
+        pub fn start(noSleepType: *const NSString, handle: *mut std::os::raw::c_uint) -> std::os::raw::c_int;
+        pub fn stop(handle: std::os::raw::c_uint);
+        pub fn isStarted(handle: std::os::raw::c_uint) -> bool;
     }
 }
 
